@@ -3,6 +3,8 @@ let hbs = require('hbs');
 
 let app = express();
 
+const local_port = process.env.PORT || 3000;
+
 app.set('view engine', 'hbs');
 
 //middlewares
@@ -33,6 +35,6 @@ app.get('/about', (request, response) => {
 	});
 });
 
-app.listen(3000, () => {
-	console.log('Server is up on port 3000');
+app.listen(local_port, () => {
+	console.log(`Server is up on port ${local_port}`);
 });
